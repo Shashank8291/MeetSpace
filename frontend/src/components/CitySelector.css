@@ -1,0 +1,77 @@
+.city-selector { position: relative; display: inline-block; }
+
+.city-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.city-btn:hover {
+  background: var(--surface-2);
+  border-color: var(--border-2);
+}
+.city-chevron {
+  font-size: 12px;
+  color: var(--text-2);
+  transition: transform 0.2s ease;
+  margin-left: 4px;
+}
+.city-chevron.open { transform: rotate(180deg); }
+
+.city-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  min-width: 200px;
+  list-style: none;
+  padding: 8px;
+  z-index: 999;
+  box-shadow: var(--shadow);
+  animation: slide-up 0.2s ease;
+}
+
+.city-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--text-2);
+  transition: var(--transition);
+  position: relative;
+}
+.city-option:hover {
+  background: var(--surface-2);
+  color: var(--text);
+}
+.city-option.active {
+  color: var(--primary-light);
+  background: rgba(124,58,237,0.12);
+}
+.city-option-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--border-2);
+  flex-shrink: 0;
+}
+.city-option.active .city-option-dot {
+  background: var(--primary-light);
+  box-shadow: 0 0 6px var(--primary);
+}
+.city-check {
+  margin-left: auto;
+  color: var(--primary-light);
+  font-size: 12px;
+}

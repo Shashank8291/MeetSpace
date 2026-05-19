@@ -1,0 +1,122 @@
+.unauth-nav {
+  position: fixed;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 48px);
+  max-width: 1060px;
+  z-index: 100;
+  padding: 0 24px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  animation: nav-slide-up 0.5s ease both;
+}
+
+.unauth-nav-inner {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.unauth-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: transform 0.2s ease;
+}
+.unauth-brand:hover {
+  transform: translateY(-1px);
+}
+
+.unauth-logo {
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  font-size: 16px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #7c3aed, #ec4899);
+  color: #fff;
+  flex-shrink: 0;
+  box-shadow: 0 4px 15px var(--primary-glow);
+}
+
+.unauth-brand-name {
+  font-size: 19px;
+  font-weight: 800;
+  color: var(--text);
+  letter-spacing: -0.02em;
+}
+
+.unauth-links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.unauth-link {
+  padding: 8px 16px;
+  background: transparent;
+  border: none;
+  border-radius: 12px;
+  font-family: var(--font);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-2);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.unauth-link:hover {
+  color: var(--primary);
+  background: rgba(124,58,237,0.08);
+}
+
+.btn-primary-small {
+  background: linear-gradient(135deg, #7c3aed, #ec4899);
+  background-size: 200% auto;
+  color: #fff;
+  box-shadow: 0 4px 15px var(--primary-glow);
+  margin-left: 8px;
+}
+
+.btn-primary-small:hover {
+  color: #fff;
+  background-position: right center;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px var(--primary-glow);
+}
+
+@media (max-width: 640px) {
+  .unauth-nav {
+    top: 10px;
+    width: calc(100% - 20px);
+    border-radius: 16px;
+    padding: 0 16px;
+  }
+  .unauth-brand-name {
+    display: none;
+  }
+  .unauth-link {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+}
+
+@keyframes nav-slide-up {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 28px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
