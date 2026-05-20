@@ -61,7 +61,7 @@ CORS_ALLOWED_ORIGINS = [
 ]
 if os.environ.get('CORS_ALLOWED_ORIGINS'):
     CORS_ALLOWED_ORIGINS.extend(os.environ.get('CORS_ALLOWED_ORIGINS').split(','))
-CORS_ALLOW_ALL_ORIGINS = DEBUG  # permissive in dev
+CORS_ALLOW_ALL_ORIGINS = True  # Temporarily allow all for deployment debugging
 
 # ── REST Framework ─────────────────────────────────────────────
 REST_FRAMEWORK = {
