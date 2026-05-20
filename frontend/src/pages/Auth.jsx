@@ -148,9 +148,7 @@ export default function Auth({ onAuthSuccess }) {
 
     setLoading(true);
     try {
-      const res = await axios.post(`${API_BASE}/auth/register/`, formData, {
-        headers: { 'Content-Type': 'multipart/form-data' },
-      });
+      const res = await axios.post(`${API_BASE}/auth/register/`, formData);
       onAuthSuccess(res.data.user, res.data.token);
       navigate('/');
     } catch (err) {
